@@ -31,9 +31,14 @@ export function ParticlesBackground() {
     let particles: Particle[] = [];
     let raf = 0;
 
+    // Lighter field on phones: fewer particles keeps the O(n²) link loop cheap.
     const count = () => {
-      const base = Math.floor((window.innerWidth * window.innerHeight) / 18000);
-      return Math.max(30, Math.min(90, base));
+      const small = window.innerWidth < 768;
+      const density = small ? 30000 : 18000;
+      const base = Math.floor((window.innerWidth * window.innerHeight) / density);
+      return small
+        ? Math.max(18, Math.min(40, base))
+        : Math.max(30, Math.min(90, base));
     };
 
     const seed = () => {
@@ -73,6 +78,7 @@ export function ParticlesBackground() {
       }
 
       // connecting lines
+      const linkDist = width < 768 ? 90 : 120;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const a = particles[i];
@@ -80,8 +86,8 @@ export function ParticlesBackground() {
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const dist = Math.hypot(dx, dy);
-          if (dist < 120) {
-            const alpha = (1 - dist / 120) * 0.25;
+          if (dist < linkDist) {
+            const alpha = (1 - dist / linkDist) * 0.25;
             ctx.strokeStyle = `rgba(124,58,237,${alpha})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();

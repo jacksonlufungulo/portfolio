@@ -69,7 +69,7 @@ export function About() {
                   />
                 </div>
               </div>
-              <div className="glass absolute -bottom-5 -right-3 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-glow">
+              <div className="glass absolute -bottom-4 right-2 flex items-center gap-3 rounded-2xl px-3 py-2 shadow-glow sm:-bottom-5 sm:-right-3 sm:px-4 sm:py-3">
                 <Award className="h-8 w-8 text-primary" />
                 <div>
                   <p className="font-display text-lg font-bold">8 Awards</p>

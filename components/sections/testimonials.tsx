@@ -44,9 +44,9 @@ export function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <Quote className="absolute -left-2 -top-6 h-16 w-16 text-primary/20" />
+          <Quote className="absolute -top-5 left-0 h-12 w-12 text-primary/20 sm:-left-2 sm:-top-6 sm:h-16 sm:w-16" />
 
-          <div className="card-glow glass min-h-[18rem] overflow-hidden rounded-3xl p-8 md:p-12">
+          <div className="card-glow glass min-h-[18rem] overflow-hidden rounded-3xl p-6 sm:p-8 md:p-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}

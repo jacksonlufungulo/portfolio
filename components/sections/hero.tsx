@@ -158,17 +158,17 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 14, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="glass absolute -left-6 top-12 rounded-2xl px-4 py-3 text-sm shadow-glow-purple"
+            className="glass absolute -left-2 top-8 rounded-2xl px-3 py-2 text-sm shadow-glow-purple sm:-left-6 sm:top-12 sm:px-4 sm:py-3"
           >
-            <p className="font-display text-xl font-bold text-secondary">50+</p>
+            <p className="font-display text-lg font-bold text-secondary sm:text-xl">50+</p>
             <p className="text-xs text-muted">Projects</p>
           </motion.div>
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="glass absolute -right-4 bottom-16 rounded-2xl px-4 py-3 text-sm shadow-glow"
+            className="glass absolute -right-2 bottom-12 rounded-2xl px-3 py-2 text-sm shadow-glow sm:-right-4 sm:bottom-16 sm:px-4 sm:py-3"
           >
-            <p className="font-display text-xl font-bold text-primary">3+ yrs</p>
+            <p className="font-display text-lg font-bold text-primary sm:text-xl">3+ yrs</p>
             <p className="text-xs text-muted">Experience</p>
           </motion.div>
         </motion.div>
