@@ -25,7 +25,10 @@ export function Testimonials() {
     return () => clearInterval(t);
   }, [paused, go]);
 
-  const current = testimonials[index];
+  // Guard against empty content (e.g. all testimonials removed via /admin) so
+  // the section never throws during SSR — just render nothing instead.
+  if (testimonials.length === 0) return null;
+  const current = testimonials[index % testimonials.length] ?? testimonials[0];
 
   return (
     <section id="testimonials" className="section-padding relative">

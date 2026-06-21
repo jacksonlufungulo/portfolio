@@ -14,6 +14,7 @@ export function useTyping(
   const [deleting, setDeleting] = React.useState(false);
 
   React.useEffect(() => {
+    if (phrases.length === 0) return;
     const current = phrases[index % phrases.length];
 
     if (!deleting && text === current) {
