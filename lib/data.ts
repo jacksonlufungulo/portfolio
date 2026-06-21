@@ -141,6 +141,7 @@ export const defaultContent: SiteContent = {
     { label: "Skills", href: "#skills" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Experience", href: "#experience" },
+    { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ],
 

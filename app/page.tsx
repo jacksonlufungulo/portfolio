@@ -11,6 +11,7 @@ import { Services } from "@/components/sections/services";
 import { Skills } from "@/components/sections/skills";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Experience } from "@/components/sections/experience";
+import { Testimonials } from "@/components/sections/testimonials";
 import { Contact } from "@/components/sections/contact";
 
 import { ContentProvider } from "@/components/providers/content-provider";
@@ -53,6 +54,7 @@ export default async function Home() {
         <Skills />
         <Portfolio />
         <Experience />
+        <Testimonials />
         <Contact />
       </main>
 
