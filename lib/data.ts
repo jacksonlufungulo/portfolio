@@ -256,8 +256,8 @@ export const defaultContent: SiteContent = {
 
   projects: [
     {
-      id: "mukuba-help-desk",
-      title: "Mukuba Help Desk",
+      id: "student-helpdesk",
+      title: "Student Helpdesk",
       category: "Web Development",
       status: "Live",
       description:

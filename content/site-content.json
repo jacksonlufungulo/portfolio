@@ -247,8 +247,8 @@
   ],
   "projects": [
     {
-      "id": "mukuba-help-desk",
-      "title": "Mukuba Help Desk",
+      "id": "student-helpdesk",
+      "title": "Student Helpdesk",
       "category": "Web Development",
       "status": "Live",
       "description": "A student support & ticketing platform for Mukuba University, Kitwe.",
