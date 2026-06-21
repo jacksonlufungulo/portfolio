@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { CheckCircle2, Award } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { useContent } from "@/components/providers/content-provider";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/animations/reveal";
@@ -69,13 +69,6 @@ export function About() {
                   />
                 </div>
               </div>
-              <div className="glass absolute -bottom-4 right-2 flex items-center gap-3 rounded-2xl px-3 py-2 shadow-glow sm:-bottom-5 sm:-right-3 sm:px-4 sm:py-3">
-                <Award className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-display text-lg font-bold">8 Awards</p>
-                  <p className="text-xs text-muted">Design & dev</p>
-                </div>
-              </div>
             </div>
           </Reveal>
 
@@ -119,7 +112,7 @@ export function About() {
         </div>
 
         {/* stats */}
-        <div className="mt-16 grid grid-cols-2 gap-4 md:mt-20 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-3 gap-3 sm:gap-4 md:mt-20">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -127,7 +120,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="card-glow glass flex flex-col items-center gap-2 rounded-2xl p-6 text-center"
+              className="card-glow glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center sm:p-6"
             >
               <Counter value={stat.value} suffix={stat.suffix} />
               <p className="text-sm text-muted">{stat.label}</p>

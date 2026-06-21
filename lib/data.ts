@@ -162,7 +162,6 @@ export const defaultContent: SiteContent = {
     { label: "Projects Completed", value: 50, suffix: "+" },
     { label: "Clients Served", value: 20, suffix: "+" },
     { label: "Years Experience", value: 3, suffix: "+" },
-    { label: "Awards Won", value: 8, suffix: "" },
   ],
 
   bio: [
@@ -329,7 +328,6 @@ export const defaultContent: SiteContent = {
       points: [
         "Directed creative for product launches and pitch decks",
         "Built reusable design systems adopted across teams",
-        "Won 8 design awards and recognitions",
       ],
     },
   ],
