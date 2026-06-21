@@ -1,10 +1,12 @@
 "use client";
 
 import { useContent } from "@/components/providers/content-provider";
+import { useExistingLinks } from "@/components/hooks/use-existing-links";
 import { Icon } from "@/lib/icons";
 
 export function Footer() {
-  const { navLinks, services, siteConfig, socials } = useContent();
+  const { navLinks: allNavLinks, services, siteConfig, socials } = useContent();
+  const navLinks = useExistingLinks(allNavLinks);
   const year = 2026; // static to avoid hydration mismatch; update yearly
 
   const scrollTo = (href: string) =>

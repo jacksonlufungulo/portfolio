@@ -6,10 +6,12 @@ import { Menu, X, Moon, Sun, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/providers/theme-provider";
 import { useContent } from "@/components/providers/content-provider";
+import { useExistingLinks } from "@/components/hooks/use-existing-links";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const { navLinks, siteConfig } = useContent();
+  const { navLinks: allNavLinks, siteConfig } = useContent();
+  const navLinks = useExistingLinks(allNavLinks);
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState("#home");
