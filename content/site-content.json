@@ -10,7 +10,9 @@
     "available": true,
     "url": "https://jacksonlufungulo.dev",
     "heroImage": "/uploads/yuppy-1781982266973.png",
-    "aboutImage": "/uploads/prof-jackson-1781982324061.jpg"
+    "aboutImage": "/uploads/prof-jackson-1781982324061.jpg",
+    "formspreeEndpoint": "",
+    "cvUrl": ""
   },
   "navLinks": [
     {
@@ -36,14 +38,6 @@
     {
       "label": "Experience",
       "href": "#experience"
-    },
-    {
-      "label": "Testimonials",
-      "href": "#testimonials"
-    },
-    {
-      "label": "Blog",
-      "href": "#blog"
     },
     {
       "label": "Contact",

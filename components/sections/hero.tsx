@@ -95,13 +95,16 @@ export function Hero() {
               <Sparkles className="h-4 w-4" />
               Hire Me
             </Button>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center gap-2 py-1 text-sm font-medium text-muted transition-colors hover:text-primary sm:py-0"
-            >
-              <Download className="h-4 w-4" />
-              Download CV
-            </a>
+            {siteConfig.cvUrl && (
+              <a
+                href={siteConfig.cvUrl}
+                download
+                className="inline-flex items-center justify-center gap-2 py-1 text-sm font-medium text-muted transition-colors hover:text-primary sm:py-0"
+              >
+                <Download className="h-4 w-4" />
+                Download CV
+              </a>
+            )}
           </motion.div>
 
           <motion.div

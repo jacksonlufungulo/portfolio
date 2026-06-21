@@ -319,6 +319,8 @@ export default function AdminPage() {
               <TextField label="Phone" value={content.siteConfig.phone} onChange={(v) => set("siteConfig", { ...content.siteConfig, phone: v })} />
               <TextField label="Location" value={content.siteConfig.location} onChange={(v) => set("siteConfig", { ...content.siteConfig, location: v })} />
               <TextField label="Site URL" value={content.siteConfig.url} onChange={(v) => set("siteConfig", { ...content.siteConfig, url: v })} hint="Used for SEO / canonical links" />
+              <TextField label="Contact form endpoint" value={content.siteConfig.formspreeEndpoint} onChange={(v) => set("siteConfig", { ...content.siteConfig, formspreeEndpoint: v })} hint="Paste your Formspree form URL (e.g. https://formspree.io/f/abc123)" />
+              <TextField label="CV file URL" value={content.siteConfig.cvUrl} onChange={(v) => set("siteConfig", { ...content.siteConfig, cvUrl: v })} hint="Path to your CV PDF in /public (e.g. /cv.pdf). Empty hides the button." />
               <ImageUpload label="Hero image" value={content.siteConfig.heroImage} onChange={(v) => set("siteConfig", { ...content.siteConfig, heroImage: v })} hint="Shown in the hero profile card" />
               <ImageUpload label="About image" value={content.siteConfig.aboutImage} onChange={(v) => set("siteConfig", { ...content.siteConfig, aboutImage: v })} hint="Shown in the About section" />
               <div className="sm:col-span-2">

@@ -20,6 +20,8 @@ export interface SiteConfig {
   url: string;
   heroImage: string;
   aboutImage: string;
+  formspreeEndpoint: string;
+  cvUrl: string;
 }
 
 export interface NavLink {
@@ -128,6 +130,8 @@ export const defaultContent: SiteContent = {
     url: "https://jacksonlufungulo.dev",
     heroImage: "/profile.jpg",
     aboutImage: "/profile.jpg",
+    formspreeEndpoint: "",
+    cvUrl: "",
   },
 
   navLinks: [
@@ -137,8 +141,6 @@ export const defaultContent: SiteContent = {
     { label: "Skills", href: "#skills" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Experience", href: "#experience" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Blog", href: "#blog" },
     { label: "Contact", href: "#contact" },
   ],
 

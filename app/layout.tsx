@@ -55,7 +55,6 @@ export async function generateMetadata(): Promise<Metadata> {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.role}`,
     description: siteConfig.description,
-    creator: "@jacksoncarter",
   },
   robots: {
     index: true,

@@ -9,6 +9,7 @@ import {
   Send,
   CheckCircle2,
   Loader2,
+  AlertCircle,
 } from "lucide-react";
 import { useContent } from "@/components/providers/content-provider";
 import { Icon } from "@/lib/icons";
@@ -16,7 +17,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/animations/reveal";
 import { Button } from "@/components/ui/button";
 
-type Status = "idle" | "sending" | "sent";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export function Contact() {
   const { siteConfig, socials } = useContent();
@@ -30,12 +31,34 @@ export function Contact() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("sending");
-    // Placeholder submit — wire to an API route / email service in production.
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setStatus("idle"), 4000);
+
+    const endpoint = siteConfig.formspreeEndpoint?.trim();
+
+    // No endpoint configured yet → simulate a send so the form isn't dead in dev.
+    if (!endpoint) {
+      await new Promise((r) => setTimeout(r, 1200));
+      setStatus("sent");
+      form.reset();
+      setTimeout(() => setStatus("idle"), 4000);
+      return;
+    }
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      setStatus("sent");
+      form.reset();
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -158,18 +181,27 @@ export function Contact() {
                 type="submit"
                 variant="gradient"
                 size="lg"
-                disabled={status !== "idle"}
+                disabled={status === "sending" || status === "sent"}
                 className="w-full sm:w-auto"
               >
                 {status === "sending" && (
                   <Loader2 className="h-4 w-4 animate-spin" />
                 )}
                 {status === "sent" && <CheckCircle2 className="h-4 w-4" />}
+                {status === "error" && <AlertCircle className="h-4 w-4" />}
                 {status === "idle" && <Send className="h-4 w-4" />}
                 {status === "idle" && "Send Message"}
                 {status === "sending" && "Sending..."}
                 {status === "sent" && "Message Sent!"}
+                {status === "error" && "Try Again"}
               </Button>
+
+              {status === "error" && (
+                <p className="flex items-center gap-2 text-sm text-accent">
+                  <AlertCircle className="h-4 w-4 shrink-0" />
+                  Something went wrong. Please try again or email me directly.
+                </p>
+              )}
             </form>
           </Reveal>
         </div>
