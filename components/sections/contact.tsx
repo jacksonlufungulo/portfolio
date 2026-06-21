@@ -162,7 +162,7 @@ export function Contact() {
                   placeholder="jane@email.com"
                 />
               </div>
-              <Field label="Subject" name="subject" placeholder="Project inquiry" />
+              <Field label="Subject" name="_subject" placeholder="Project inquiry" />
               <div className="flex flex-col gap-2">
                 <label htmlFor="message" className="text-sm font-medium">
                   Message

@@ -130,7 +130,7 @@ export const defaultContent: SiteContent = {
     url: "https://jacksonlufungulo.dev",
     heroImage: "/profile.jpg",
     aboutImage: "/profile.jpg",
-    formspreeEndpoint: "",
+    formspreeEndpoint: "https://formspree.io/f/mnjkagqa",
     cvUrl: "",
   },
 
