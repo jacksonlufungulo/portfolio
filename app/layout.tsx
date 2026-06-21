@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { getContent } from "@/lib/content-store";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { normalizeUrl } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,8 +25,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   const { siteConfig } = await getContent();
+  const siteUrl = normalizeUrl(siteConfig.url);
   return {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${siteConfig.name} — ${siteConfig.role}`,
     template: `%s · ${siteConfig.name}`,
@@ -46,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.url,
+    url: siteUrl,
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.role}`,
     description: siteConfig.description,
