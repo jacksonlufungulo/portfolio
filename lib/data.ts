@@ -256,49 +256,45 @@ export const defaultContent: SiteContent = {
 
   projects: [
     {
-      id: "ecozam",
-      title: "EcoZam",
+      id: "mukuba-help-desk",
+      title: "Mukuba Help Desk",
       category: "Web Development",
-      status: "In Progress",
+      status: "Live",
       description:
-        "An eco-conscious platform promoting environmental sustainability in Zambia.",
+        "A student support & ticketing platform for Mukuba University, Kitwe.",
       longDescription:
-        "EcoZam is a platform focused on environmental sustainability in Zambia — connecting people with green initiatives, resources, and community action. (Replace this description with the real project details from /admin.)",
-      image:
-        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
-      tech: ["React", "Node.js", "MySQL"],
+        "Mukuba Help Desk is a self-service support portal for students at Mukuba University in Kitwe, Zambia. Students raise and track support tickets, browse a knowledge base, and complete key academic workflows — graduation clearance, de-registration, and appeals — from a single dashboard, with real-time notifications and live chat support.",
+      image: "/uploads/helpdesk.png",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
       demo: "",
-      repo: "https://github.com/jacksonlufungulo/EcoZam",
+      repo: "",
     },
     {
-      id: "syncwave",
-      title: "SyncWave",
+      id: "logbook-pro",
+      title: "LogBook Pro",
       category: "Web Development",
-      status: "In Progress",
+      status: "Live",
       description:
-        "A real-time synchronization and collaboration application.",
+        "A digital logbook system for students on industrial attachment.",
       longDescription:
-        "SyncWave is a real-time application built for seamless synchronization and collaboration. (Replace this description with the real project details from /admin.)",
-      image:
-        "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80",
-      tech: ["Next.js", "TypeScript", "Node.js"],
+        "LogBook Pro is a Digital Attachment Logbook System that replaces the paper logbook for students on industrial attachment. Students record daily entries, submit weekly summaries, and track attachment progress, while supervisors review, approve, or reject entries with feedback — all backed by analytics dashboards and an in-app messaging system.",
+      image: "/uploads/logbook-student-dashboard.png",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
       demo: "",
-      repo: "https://github.com/jacksonlufungulo/SyncWave",
+      repo: "",
     },
     {
-      id: "sims",
-      title: "SIMS",
+      id: "zampa",
+      title: "ZamPa",
       category: "Web Development",
-      status: "In Progress",
-      description:
-        "A Student Information Management System for schools and institutions.",
+      status: "Live",
+      description: "A unified payment gateway built for Zambia.",
       longDescription:
-        "SIMS is an information management system for handling students, courses, and institutional records. (Replace this description with the real project details from /admin.)",
-      image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-      tech: ["PHP", "MySQL", "JavaScript"],
+        "ZamPa is a payment gateway that lets Zambian merchants accept payments through a single API — MTN MoMo, Airtel Money, Zamtel Kwacha, Visa/Mastercard and ZamPay. The merchant dashboard surfaces transaction volumes, settlements, API keys and webhooks, giving businesses one place to manage and reconcile every payment.",
+      image: "/uploads/zampa.png",
+      tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
       demo: "",
-      repo: "https://github.com/jacksonlufungulo/SIMS",
+      repo: "",
     },
   ],
 

@@ -109,15 +109,20 @@ export function Contact() {
               ))}
             </div>
 
-            {/* map placeholder */}
+            {/* map */}
             <div className="card-glow glass relative h-44 overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-grid-pattern bg-[size:32px_32px] opacity-40" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center">
-                <MapPin className="h-7 w-7 text-primary" />
-                <p className="text-sm font-medium">Google Maps</p>
-                <p className="text-xs text-muted">
-                  Embed your map here in production
-                </p>
+              <iframe
+                title="Location map"
+                src="https://www.google.com/maps?q=Copperbelt%20Province%2C%20Zambia&z=8&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full grayscale-[0.2] [color-scheme:light]"
+                style={{ border: 0 }}
+                allowFullScreen
+              />
+              <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1.5 text-xs font-medium backdrop-blur">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                {siteConfig.location}
               </div>
             </div>
           </Reveal>
