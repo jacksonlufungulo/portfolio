@@ -18,12 +18,12 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-hero-glow pt-28"
+      className="relative flex min-h-screen items-center overflow-hidden bg-hero-glow pt-24 sm:pt-28"
     >
       {/* grid backdrop */}
       <div className="absolute inset-0 -z-10 bg-grid-pattern bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
 
-      <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="container grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
         {/* Left: copy */}
         <div className="flex flex-col gap-6">
           <motion.div
@@ -76,18 +76,28 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
-            <Button variant="gradient" size="lg" onClick={() => scrollTo("#portfolio")}>
+            <Button
+              variant="gradient"
+              size="lg"
+              className="w-full sm:w-auto"
+              onClick={() => scrollTo("#portfolio")}
+            >
               View Portfolio
             </Button>
-            <Button variant="outline" size="lg" onClick={() => scrollTo("#contact")}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto"
+              onClick={() => scrollTo("#contact")}
+            >
               <Sparkles className="h-4 w-4" />
               Hire Me
             </Button>
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-primary"
+              className="inline-flex items-center justify-center gap-2 py-1 text-sm font-medium text-muted transition-colors hover:text-primary sm:py-0"
             >
               <Download className="h-4 w-4" />
               Download CV

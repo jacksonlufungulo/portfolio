@@ -1,6 +1,5 @@
 "use client";
 
-import { Heart } from "lucide-react";
 import { useContent } from "@/components/providers/content-provider";
 import { Icon } from "@/lib/icons";
 
@@ -14,9 +13,9 @@ export function Footer() {
   return (
     <footer className="relative border-t border-border">
       <div className="container py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
           {/* brand */}
-          <div className="flex flex-col gap-4">
+          <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
             <button
               onClick={() => scrollTo("#home")}
               className="flex items-center gap-2 font-display text-lg font-bold"
@@ -104,13 +103,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted sm:flex-row">
+        <div className="mt-12 border-t border-border pt-6 text-center text-sm text-muted">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
-          </p>
-          <p className="flex items-center gap-1.5">
-            Built with <Heart className="h-4 w-4 fill-accent text-accent" /> using
-            Next.js & Tailwind
           </p>
         </div>
       </div>
